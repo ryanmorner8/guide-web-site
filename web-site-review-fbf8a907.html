@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>28圈 · 简明访问指引</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f2f2f2;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #2e2e2e;
+      line-height: 1.7;
+      padding: 2rem 1.2rem;
+    }
+
+    .page {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    /* Hero 区 – 开场短句 */
+    .hero {
+      text-align: center;
+      padding: 3rem 1.5rem 2rem;
+      background: #ffffff;
+      border-radius: 18px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      border: 1px solid #e4e4e4;
+      margin-bottom: 2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 450;
+      letter-spacing: 1px;
+      color: #1e2b3c;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero .subhead {
+      max-width: 580px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      color: #5b5b5b;
+      background: #f8f8f8;
+      padding: 0.6rem 1.2rem;
+      border-radius: 40px;
+      display: inline-block;
+      border: 1px solid #eaeaea;
+    }
+
+    /* 承接段落 – 卡片风格 */
+    .intro-card {
+      background: #ffffff;
+      border: 1px solid #e6e6e6;
+      border-radius: 18px;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.02);
+      padding: 2rem 2rem 1.8rem;
+      margin-bottom: 2rem;
+    }
+
+    .intro-card p {
+      font-size: 1rem;
+      margin-bottom: 1.2rem;
+      color: #3a3a3a;
+    }
+
+    .intro-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .intro-card .highlight {
+      background: #f7f9fb;
+      padding: 0.1rem 0.4rem;
+      border-radius: 6px;
+      font-weight: 440;
+    }
+
+    /* 特点列表 – 两列网格 */
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+
+    @media (max-width: 620px) {
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .feature-item {
+      background: white;
+      border: 1px solid #e1e1e1;
+      border-radius: 16px;
+      padding: 1.2rem 1.4rem;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.02);
+      transition: box-shadow 0.15s, transform 0.1s;
+    }
+
+    .feature-item:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+      transform: translateY(-1px);
+    }
+
+    .feature-item h3 {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #1a2633;
+      margin-bottom: 0.35rem;
+      border-left: 4px solid #d0d9e0;
+      padding-left: 0.7rem;
+    }
+
+    .feature-item p {
+      font-size: 0.95rem;
+      color: #4f4f4f;
+      margin-top: 0.4rem;
+    }
+
+    /* 温和结尾 + 提示 卡片 */
+    .closing-card {
+      background: #ffffff;
+      border: 1px solid #e4e4e4;
+      border-radius: 18px;
+      padding: 2rem 2rem 1.8rem;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.02);
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .closing-card p {
+      margin-bottom: 1rem;
+      color: #3b3b3b;
+    }
+
+    .closing-card .tip-box {
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 1rem 1.4rem;
+      margin: 1.2rem 0 0.4rem;
+      border: 1px solid #eaeef2;
+    }
+
+    .closing-card .tip-box strong {
+      color: #2e4053;
+      font-weight: 520;
+    }
+
+    .faq-summary {
+      margin-top: 1.6rem;
+      border-top: 1px dashed #d8d8d8;
+      padding-top: 1.4rem;
+    }
+
+    .faq-summary details {
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .faq-summary summary {
+      cursor: pointer;
+      font-weight: 460;
+      color: #2f4052;
+      padding: 0.35rem 0;
+    }
+
+    .faq-summary summary:hover {
+      color: #1e2b3c;
+    }
+
+    .faq-summary details p {
+      margin: 0.5rem 0 0 0.8rem;
+      color: #4c4c4c;
+    }
+
+    /* 按钮式链接 (但只用文本融入) */
+    .text-link {
+      color: #1f4d6e;
+      text-decoration: none;
+      border-bottom: 1px solid #c7d2db;
+      transition: border-color 0.1s, color 0.1s;
+      font-weight: 440;
+    }
+
+    .text-link:hover {
+      color: #0e2b3f;
+      border-bottom-color: #1f4d6e;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.84rem;
+      color: #7f7f7f;
+      border-top: 1px solid #e0e0e0;
+      padding-top: 2rem;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Hero 开场短句 -->
+  <section class="hero">
+    <h1>简明指南 · 28圈</h1>
+    <div class="subhead">一次温和的访问提醒，从了解开始</div>
+  </section>
+
+  <!-- 承接段落 -->
+  <section class="intro-card">
+    <p>
+      在开始浏览任何网站之前，花一点时间确认它的方向与结构，往往能让后续体验更加顺畅。
+      <span class="highlight">28圈</span> 是一个围绕特定兴趣与信息组织起来的平台，内容偏向实用与日常场景。
+      如果你正打算了解它，下面的几点概括或许能帮你快速建立印象。
+    </p>
+    <p>
+      我们始终建议：保持平常心，像翻阅一本杂志那样打开一个新网站，不必急于下结论。
+      一篇好的介绍应该像一位温和的朋友，把重点放在「这里有什么」而非「你应该做什么」。
+    </p>
+  </section>
+
+  <!-- 特点列表 -->
+  <section class="features-grid">
+    <div class="feature-item">
+      <h3>内容方向</h3>
+      <p>涵盖资讯、生活、兴趣圈层，结构清晰，分类明确。</p>
+    </div>
+    <div class="feature-item">
+      <h3>访问方式</h3>
+      <p>直接通过浏览器访问，无需额外软件。适合日常使用。</p>
+    </div>
+    <div class="feature-item">
+      <h3>信息密度</h3>
+      <p>页面以文字与图片为主，节奏平缓，没有过度推送。</p>
+    </div>
+    <div class="feature-item">
+      <h3>浏览习惯</h3>
+      <p>建议开启广告拦截或隐私保护，根据个人偏好调整设置。</p>
+    </div>
+  </section>
+
+  <!-- 温和结尾 + 提示 + FAQ摘要 -->
+  <section class="closing-card">
+    <p>
+      如果你对网站本身感兴趣，可以直接访问
+      <a href="https://web-site-28circle.com" class="text-link">28圈</a>
+      ，亲自感受它的内容组织与氛围。我们只是提供一个安静的入口，不替你做判断。
+    </p>
+    <div class="tip-box">
+      <strong>💡 访问提醒</strong>
+      <p style="margin-top: 0.4rem; margin-bottom: 0;">
+        使用公用设备时注意退出个人账号；遇到弹窗或下载提示保持谨慎。
+        任何正规网站都不需要你付费才能「浏览」基本信息。
+      </p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-summary">
+      <details>
+        <summary>28圈 适合哪些人？</summary>
+        <p>适合希望集中浏览特定话题、倾向图文而非短视频的用户。分类较细，各取所需。</p>
+      </details>
+      <details>
+        <summary>是否必须注册？</summary>
+        <p>大部分内容可直接查看，部分互动功能可能需要账号。建议先浏览再决定。</p>
+      </details>
+      <details>
+        <summary>页面加载速度如何？</summary>
+        <p>多数页面响应正常，若感觉缓慢可尝试刷新或检查网络。不使用极端大型资源。</p>
+      </details>
+    </div>
+  </section>
+
+  <footer>
+    <span>页面仅作温和介绍 · 内容保持中立 · 2025</span>
+  </footer>
+
+</div>
+</body>
+</html>
